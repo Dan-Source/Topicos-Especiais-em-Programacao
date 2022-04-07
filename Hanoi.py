@@ -39,7 +39,7 @@ class Hanoi:
   # Método Movimenta(Torre de Origem, Torre de destino)
   # Movimenta o elemento de um torre para outra
   def movimenta(self, torre_origem, torre_destino):
-    self.movimentos= self.movimentos + 1
+    self.movimentos+=1
     if self.verifica_condicao(torre_origem, torre_destino):
       torre_destino.push(torre_origem.pop())
     else:
@@ -55,24 +55,25 @@ class Hanoi:
   
   # Verifica_condição
   # nao pode movimentar de torres que nao tem elementos
-  # maior nao pode ficar em cima di menor
+  # maior nao pode ficar em cima do menor
   def verifica_condicao(self, torre_origem, torre_destino):
-    if torre_destino.peek() == 0:
-      return True
-    if torre_destino.peek() > torre_origem.peek():
+
+    if (torre_origem.peek() == 0) or (torre_destino.peek() == 0) or (torre_destino.peek() > torre_origem.peek()):
       return True
     return False
   
   #Verifica se o elemento pode ser movido
 
   #Verifica se o jogo acabou
+
+  
+
   #Método Resolve (1 Passo: Movimenta Disco 1 para torre 3, ...)
+# colocar todos os movimentos auqi e não printar o jogo nesta parte
   def o_jogo_terminou(self):
     if f'{self.torre_c}' == '[3, 2, 1]':
       print("O jogo terminou!!")
       print(f"Quantidade de movimentos {self.movimentos}")
-
-
 
 
 
